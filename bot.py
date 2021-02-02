@@ -16,6 +16,7 @@ async def on_ready():
 	print(f"Connected to Bot: {client.user.name}")
 	print(f"Bot ID: {client.user.id}")
 	print(f"Currently in: {len(client.guilds)} server(s)!")
+	print(f"The current latency of the bot is {round(client.latency * 1000)} ms")
 ## Making sure the bot is online
 
 # Events
@@ -23,9 +24,9 @@ async def on_ready():
 # Commands
 
 ## Ping
-@client.command()
+@client.command(aliases=["latency"])
 async def ping(ctx):
-	await ctx.send('Pong!')
+	await ctx.send(f"Pong! The latency is: {round(client.latency * 1000)} miliseconds!")
 ## Ping
 # Commands
 
