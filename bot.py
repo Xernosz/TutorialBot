@@ -11,7 +11,9 @@ client = commands.Bot(command_prefix='%')
 ## Making sure the bot is online
 @client.event
 async def on_ready():
-	print("Bot is ready!")
+	print(f"Connected to Bot: {client.user.name}")
+	print(f"Bot ID: {client.user.id}")
+	print(f"Currently in: {len(client.guilds)} server(s)!")
 ## Making sure the bot is online
 
 # Events
