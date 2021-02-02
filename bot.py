@@ -25,4 +25,4 @@ async def ping(ctx):
 ## Ping
 # Commands
 
-client.run('ODA2MDk3MTM3MjM3ODg0OTU4.YBkedg.z2TIFvq101YXGOhVewnVn1Lec9Y')
+client.run('YOUR_TOKEN')
