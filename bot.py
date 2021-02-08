@@ -12,12 +12,12 @@ client.remove_command("help")
 ## Making sure the bot is online
 @client.event
 async def on_ready():
-    strem = discord.Game(name="Do %help")
-    await client.change_presence(status=discord.Status.dnd, activity=strem)
-    print(f"Connected to Bot: {client.user.name}")
-    print(f"Bot ID: {client.user.id}")
-    print(f"Currently in: {len(client.guilds)} server(s)!")
-    print(f"Latency = {round(client.latency * 1000)} ms")
+	strem = discord.Game(name="Do %help")
+	await client.change_presence(status=discord.Status.dnd, activity=strem)
+	print(f"Connected to Bot: {client.user.name}")
+	print(f"Bot ID: {client.user.id}")
+	print(f"Currently in: {len(client.guilds)} server(s)!")
+	print(f"Latency = {round(client.latency * 1000)} ms")
 ## Making sure the bot is online
 
 # Events
@@ -27,7 +27,7 @@ async def on_ready():
 ## Ping
 @client.command(aliases=["latency"])
 async def ping(ctx):
-    await ctx.send(f"The current latency is: {round(client.latency * 1000)} miliseconds")
+	await ctx.send(f"The current latency is: {round(client.latency * 1000)} miliseconds")
 ## Ping
 
 ## 8Ball
@@ -75,6 +75,24 @@ async def help(ctx):
 
 
 ## Help
+
+## Hug
+@client.command()
+async def hug(ctx, user: discord.User, *, Notes):
+	hugGifs = ["https://media.giphy.com/media/143v0Z4767T15e/giphy.gif",
+	"https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif",
+	"https://media.giphy.com/media/kvKFM3UWg2P04/giphy.gif",
+	"https://media.giphy.com/media/wnsgren9NtITS/giphy.gif",
+	"https://media.giphy.com/media/HaC1WdpkL3W00/giphy.gif",
+	"https://media.giphy.com/media/yziFo5qYAOgY8/giphy.gif",
+	"https://media.giphy.com/media/cotftb3AXgfV6/giphy.gif",
+	"https://media.giphy.com/media/cotftb3AXgfV6/giphy.gif"
+	"https://media2.giphy.com/media/vJ3PqQ1qTsEV2/giphy.gif?cid=ecf05e47fc48741d2ff3569c13417634a10afba74cd8517d&rid=giphy.gif"]
+	embed = discord.Embed(title=None, description=f"{ctx.message.author.mention} hugs {user.mention}, {Notes}")
+	embed.set_image(url=random.choice(hugGifs))
+
+	await ctx.send(embed=embed)
+## Hug
 # Commands
 
 client.run('YOUR_TOKEN')
