@@ -52,7 +52,7 @@ async def _8ball(ctx, *, question):
                  'My reply is no.',
                  'My sources say no.',
                  'Outlook not so good.',
-                 'Very doubtful.', ]
+                 'Very doubtful.']
     if question:
         await ctx.send(f'Question: {question} \nAnswer: {random.choice(responses)}')
     else:
