@@ -110,4 +110,4 @@ async def ban(ctx, user: discord.User, *, reason):
 
 # Commands
 
-client.run('ODA2MDk3MTM3MjM3ODg0OTU4.YBkedg.EpRdgithJItdVvJoTn_913cML_4')
+client.run('YOUR_TOKEN')
