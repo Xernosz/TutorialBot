@@ -93,6 +93,21 @@ async def hug(ctx, user: discord.User, *, Notes):
 
 	await ctx.send(embed=embed)
 ## Hug
+
+## Kick
+@client.command()
+async def kick(ctx, user: discord.User, *, reason):
+	await user.kick(reason=reason)
+	await ctx.send(f'{user.mention} has been kicked by {ctx.message.author.mention} for reason of: {reason}!')
+## Kick
+
+## Ban
+@client.command()
+async def ban(ctx, user: discord.User, *, reason):
+	await user.ban(reason=reason)
+	await ctx.send(f'{user.mention} has been banned by {ctx.message.author.mention} for reason of: {reason}!')
+## Ban
+
 # Commands
 
 client.run('YOUR_TOKEN')
