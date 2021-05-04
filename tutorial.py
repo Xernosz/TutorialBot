@@ -2,6 +2,7 @@
 import discord
 from discord.ext import commands, tasks
 import random
+import config
 # Importing Shit
 
 # Setup
@@ -110,4 +111,4 @@ async def ban(ctx, user: discord.User, *, reason):
 
 # Commands
 
-client.run('YOUR_TOKEN')
+client.run(config.token)
