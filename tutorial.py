@@ -108,7 +108,33 @@ async def ban(ctx, user: discord.User, *, reason):
 	await user.ban(reason=reason)
 	await ctx.send(f'{user.mention} has been banned by {ctx.message.author.mention} for reason of: {reason}!')
 ## Ban
+## Create Invite
+@client.command()
+async def invite(ctx):
+    invite = await ctx.channel.create_invite(reason="why not")
+    await ctx.send(f"{ctx.author.mention}, here is a invite to {ctx.guild.name}! {invite}")
+## Create Invite
 
+## Unban
+@client.command()
+async def unban(ctx, id : int=True):
+    banned_users = await ctx.guild.bans()
+    
+    for ban_entry in banned_users:
+        user = ban_entry.user
+    
+        if (user.id) == (id):
+            await ctx.guild.unban(user)
+            await ctx.channel.send(f"Unbanned {user.mention}!")
+
+## Unban
+
+##  Purge
+@client.command()
+async def purge(ctx, amount=5):
+    await ctx.channel.purge(limit=amount)
+    await ctx.send(f"{amount - 1} messages were purged")
+## Purge
 # Commands
 
 client.run(config.token)
